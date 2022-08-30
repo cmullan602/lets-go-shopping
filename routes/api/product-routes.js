@@ -7,9 +7,9 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 router.get('/', async (req, res) => {
   // find all products
   try {
-    const productData = await Location.findAll(req.params, {
+    const productData = await Product.findAll(req.params, {
   
-      include: [{ model: Category, through: Tag, as: 'location_travellers' }]
+      include: [{ model: Category}, { model: Tag, through: ProductTag, as : 'product_tag'}]
 
     });
     res.status(200).json(productData);
@@ -23,17 +23,17 @@ router.get('/', async (req, res) => {
 router.get('/:id', (req, res) => {
   // find a single product by its `id`
   try {
-    const productData = await Location.findByPk(req.params.id, {
+    const productData = await Product.findByPk(req.params.id, {
   
-      include: [{ model: Category, through: Tag, as: 'location_travellers' }]
+      include: [{ model: Category}, { model: Tag, through: ProductTag, as : 'product_tag'}]
     });
 
     if (!productData) {
-      res.status(404).json({ message: 'No location found with this id!' });
+      res.status(404).json({ message: 'No product found with this id!' });
       return;
     }
 
-    res.status(200).json(locationData);
+    res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
   }
