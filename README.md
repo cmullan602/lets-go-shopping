@@ -4,6 +4,10 @@
 
 I created this project as part of my week 14 code bootcamp challenge. The application serves as a backend database for an ecommerce site. Through the application you can add, update and delete to a database that includes products, categories and tags. I thought out of all of the challenges we've done throughout class this one was the easiest. I think that gettting all of the files set up corrrectly can be difficult but they were already provided for us and we just had to refractor the code. 
 
+
+https://user-images.githubusercontent.com/104603239/187751285-3309ba7b-2a1e-4dae-a05b-434d2ca0d66f.mp4
+
+
 ## Table of Contents 
 
 * [Installation](#installation)
